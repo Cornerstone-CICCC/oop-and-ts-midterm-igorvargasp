@@ -15,15 +15,6 @@ export class ProductList extends Component {
 
     section.innerHTML = `
       <div class="product-list__container">
-        <div class="product-list__header">
-          <div class="product-list__hero">
-            <h1 class="product-list__title">Get Inspired</h1>
-            <p class="product-list__subtitle">
-              Browsing for your next favorite item, or just fancy a look at what's
-              new? From community favorites to about-to-sell-out items, see them all here.
-            </p>
-          </div>
-        </div>
         <div class="product-list__grid" id="product-grid">
           <div class="product-list__loading">Loading products...</div>
         </div>
