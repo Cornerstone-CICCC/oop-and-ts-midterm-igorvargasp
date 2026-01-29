@@ -1,6 +1,7 @@
 import { Component } from "../common/Component.js";
 import { Header } from "./Header.js";
 import { Hero } from "./Hero.js";
+import { Filters } from "./Filters.js";
 import { ProductList } from "./ProductList.js";
 import { CartList } from "./CartList.js";
 
@@ -16,12 +17,20 @@ export class App extends Component {
     hero.mount(app);
 
     const productList = new ProductList({ cartContext: this.props.cartContext });
+
+    const filters = new Filters({
+      onFilterChange: (filterValues) => {
+        productList.applyFilters(filterValues);
+      },
+    });
+    filters.mount(app);
+
     productList.mount(app);
 
     const cartList = new CartList({ cartContext: this.props.cartContext });
     cartList.mount(app);
 
-    // Wire up cart toggle button (query within app, not document)
+
     const cartToggle = app.querySelector("#cart-toggle");
     if (cartToggle) {
       cartToggle.addEventListener("click", () => cartList.toggle());
