@@ -1,1 +1,206 @@
-/* YOUR CSS HERE */
+/* ===== CSS RESET & BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f5f5f5;
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+  --color-gray-100: #f8f8f8;
+  --color-gray-200: #e8e8e8;
+  --color-gray-300: #d4d4d4;
+  --color-gray-500: #737373;
+  --color-gray-700: #404040;
+  --color-primary: #1a1a1a;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --border-radius: 8px;
+  --border-radius-lg: 24px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --transition: all 0.2s ease;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-black);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ===== HEADER / NAVBAR ===== */
+.header {
+  background-color: var(--color-bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.header__logo-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.header__logo-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.header__logo-text sup {
+  font-size: 0.5rem;
+  font-weight: 400;
+  vertical-align: super;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header__nav-link {
+  text-decoration: none;
+  color: var(--color-black);
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.header__nav-link:hover {
+  color: var(--color-black);
+}
+
+.header__nav-link--active {
+  border-bottom-color: var(--color-black);
+}
+
+.header__nav-more {
+  background: none;
+  border: none;
+  color: var(--color-black);
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 0;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__cart {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-black);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.header__cart-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.header__cart-count {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.header__account {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--color-black);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.header__account-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.hero__subtitle {
+  font-size: 1rem;
+  color: var(--color-black);
+  line-height: 1.6;
+  max-width: 550px;
+}
+
+/* ===== RESPONSIVE HEADER ===== */
+@media (max-width: 768px) {
+  .header__container {
+    padding: 1rem;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__account span {
+    display: none;
+  }
+
+  .header__cart span:not(.header__cart-count) {
+    display: none;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+}
